@@ -1,4 +1,3 @@
-
 import HeroSection from "@/components/sections/HeroSection";
 
 import BestInStore from "@/components/sections/BestInStore";
@@ -16,27 +15,27 @@ import Container from "@/components/Layout/Container";
 import PromoBanners from "@/components/sections/PromoBanners";
 import MostWanted from "@/components/sections/MostWanted";
 import Header from "@/components/Layout/Header";
+import Newslcller from "@/components/sections/Newsletter";
+import SectionBox from "@/components/sections/SectionBox";
 
 export default function HomePage() {
   return (
     <>
-      <Header/>
-      <main>
-        <Container>
-          <HeroSection />
-          <PromoBanners />
-          <BestInStore />
-          <MostWanted />
-          <AboutWatch />
-          <ProductGallery />
-          <Categories />
-          <RecentBlog />
-          <Newsletter />
-          <BrandExperience />
-        </Container>
+      <Header />
+      <main className="flex flex-col gap-2 items-center justify-center">
+        <HeroSection />
+        <PromoBanners />
+        <BestInStore />
+        <MostWanted />
+        <AboutWatch />
+        <ProductGallery />
+        <SectionBox />
+        <Categories />
+        <RecentBlog />
+        <Newslcller />
+        <BrandExperience />
       </main>
       <Footer />
     </>
   );
 }
-
