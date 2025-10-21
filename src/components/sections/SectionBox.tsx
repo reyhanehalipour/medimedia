@@ -9,7 +9,7 @@ export default function SectionBox() {
       <p className="flex flex-col  text-center items-center justify-center gap-5">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
         <br />
-        <p className="text-white text-[14px] ">sjkkscmm</p>
+        <span className="text-white text-[14px] ">sjkkscmm</span>
       </p>
     </div>
   );

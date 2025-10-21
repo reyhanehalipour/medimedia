@@ -5,7 +5,7 @@ import Slider from "../ui/Slider";
 
 export default function BrandExperience() {
   const slideContent = [
-    <div className="flex items-center justify-center text-text font-bold gap-11 text-4xl mt-5 md:mt-auto">
+    <div  key="slide-1" className="flex items-center justify-center text-text font-bold gap-11 text-4xl mt-5 md:mt-auto">
       <div className="flex flex-col items-center justify-center leading-[1.4rem]">
         {" "}
         <p>BOOST</p> <p className="text-[14px]">corporation</p>

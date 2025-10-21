@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-[#120c07] w-full h-[150px] flex flex-col-reverse md:flex-row justify-around items-center px-10 text-white">
+      <div className="bg-[#120c07] w-full h-fit md:h-[150px] flex flex-col-reverse md:flex-row justify-around items-center py-10 md:py-0 px-10 text-white">
         {/* سمت چپ */}
         <div className="flex  items-center justify-center flex-col gap-4">
           <h3 className="text-lg font-serif uppercase">Connect with us</h3>
@@ -137,7 +137,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-full h-[70px] bg-lightBrown  flex-col  justify-center md:flex md:flex-row items-center md:justify-around ">
+      <div className="w-full h-[70px]  bg-lightBrown gap-2 flex-col items-center justify-center flex md:flex-row  md:justify-around ">
         <div className="flex items-center justify-center">
           all right reseved @ 2022 design Thems
         </div>

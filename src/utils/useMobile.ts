@@ -1,20 +1,18 @@
-import { useSyncExternalStore } from 'react';
+"use client";
+import { useSyncExternalStore } from "react";
 
 const MOBILE_MAX_WIDTH = 1200;
 
-let isMobileValue: boolean | null = null;
+let isMobileValue: boolean = false;
 const listeners = new Set<() => void>();
 
+// بررسی اینکه الان موبایل هست یا نه
 const checkIsMobile = (): boolean => {
-  // const userAgent = typeof window !== 'undefined' ? navigator.userAgent : '';
-  const isWidthMobile = window.innerWidth < MOBILE_MAX_WIDTH;
-  // const isMobileUserAgent =
-  //   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-
-  // return isWidthMobile && isMobileUserAgent;
-  return isWidthMobile;
+  if (typeof window === "undefined") return false; // سمت سرور
+  return window.innerWidth < MOBILE_MAX_WIDTH;
 };
 
+// وقتی سایز صفحه تغییر کنه
 const updateIsMobile = (): void => {
   const newValue = checkIsMobile();
   if (newValue !== isMobileValue) {
@@ -23,19 +21,26 @@ const updateIsMobile = (): void => {
   }
 };
 
-if (typeof window !== 'undefined') {
-  isMobileValue = checkIsMobile();
-  window.addEventListener('resize', updateIsMobile);
-}
+// ثبت event listener
+const subscribe = (listener: () => void) => {
+  if (typeof window === "undefined") return () => {};
+  listeners.add(listener);
+  window.addEventListener("resize", updateIsMobile);
+  return () => {
+    listeners.delete(listener);
+    window.removeEventListener("resize", updateIsMobile);
+  };
+};
+
+
+const getSnapshot = (): boolean => checkIsMobile();
+
+
+const getServerSnapshot = (): boolean => false;
+
 
 const useMobile = (): boolean => {
-  return useSyncExternalStore(
-    (listener) => {
-      listeners.add(listener);
-      return () => listeners.delete(listener);
-    },
-    () => isMobileValue as boolean
-  );
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 };
 
 export default useMobile;

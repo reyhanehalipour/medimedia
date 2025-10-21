@@ -10,6 +10,7 @@ export default function Newsletter() {
     { icon: <Youtube />, name: "Twitter" },
     { icon: <Link1 />, name: "LinkedIn" },
     { icon: <Youtube />, name: "YouTube" },
+    { icon: <Youtube />, name: "YouTube" },
   ];
 
   return (
@@ -19,7 +20,7 @@ export default function Newsletter() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-4">
           <input
             placeholder="Email address"
-            className="text-white bg-black bg-opacity-50 w-[80%] md:w-[400px] h-[40px] border-white border-2 rounded-md px-3 placeholder-gray-300"
+            className="text-white bg-black bg-opacity-50 w-[90%] md:w-[400px] h-[40px] border-x-text border-t-black border-b-text border-2 rounded-md px-3 placeholder-gray-300"
           />
           <Button text="Submit" w="w-[120px]" />
         </div>
@@ -29,7 +30,7 @@ export default function Newsletter() {
 
         <div className="flex gap-3 mt-4">
           {socialIcons.map((social, index) => (
-            <Button key={index} text={social.icon} w="w-[60px]" />
+            <Button key={index} text={social.icon} w="w-[50px]" />
           ))}
         </div>
       </div>
