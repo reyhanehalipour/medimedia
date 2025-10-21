@@ -1,6 +1,6 @@
 import React from "react";
 import TextWithUnderline from "../share/TextWithUnderline";
-import Carousel from "../ui/Slider";
+
 import Slider from "../ui/Slider";
 
 export default function BrandExperience() {

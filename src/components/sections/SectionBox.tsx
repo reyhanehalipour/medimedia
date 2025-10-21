@@ -1,6 +1,4 @@
 import React from "react";
-import Button from "../share/Button";
-import { ArrowLeft, ArrowRight } from "iconsax-reactjs";
 import Carousel from "../ui/Carousel";
 
 export default function SectionBox() {

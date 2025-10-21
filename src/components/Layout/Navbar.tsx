@@ -1,9 +1,6 @@
 import {
-  ArrowCircleDown,
-  ArrowDown,
-  ArrowDown2,
+   ArrowDown2,
   Bag2,
-  Flag,
   HamburgerMenu,
   SearchNormal1,
   User,
