@@ -4,6 +4,7 @@ import CategoryCard from "../share/CategoryCard";
 import TextWithUnderline from "../share/TextWithUnderline";
 import useMobile from "@/utils/useMobile";
 import Carousel from "../ui/Carousel";
+import categoryData from "../../data";
 export default function BestInStore() {
   const [active, setActive] = useState("Classic");
   const isMobile = useMobile();
@@ -15,10 +16,9 @@ export default function BestInStore() {
   const slideContent = (
     <div className="flex items-center justify-center gap-4 w-full">
       {" "}
-      <CategoryCard />
-      <CategoryCard />
-      <CategoryCard />
-      <CategoryCard />
+      {categoryData.map((item) => (
+        <CategoryCard key={item.id} item={item} />
+      ))}
     </div>
   );
   const slides = [slideContent, slideContent];
@@ -48,7 +48,17 @@ export default function BestInStore() {
         {isMobile ? (
           <>
             {" "}
-            <CategoryCard />
+            <CategoryCard
+              item={{
+                id: 5,
+                name: "Retro Voyager",
+                price: 61000,
+                rating: 4,
+                seller: "RetroHub",
+                image: "/images/cardwatch.png",
+              }}
+              onAdd={(item) => console.log("add:", item)}
+            />
           </>
         ) : (
           <>

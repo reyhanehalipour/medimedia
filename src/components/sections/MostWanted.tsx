@@ -1,6 +1,5 @@
 import React from "react";
 import TextWithUnderline from "../share/TextWithUnderline";
-import { Butcherman } from "next/font/google";
 import Button from "../share/Button";
 
 export default function MostWanted() {
