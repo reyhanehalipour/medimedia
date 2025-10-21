@@ -25,7 +25,7 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="mb-10 md:mb-auto">
-        <Button text="EXPLORE WATCHES" w="w-[140px]" />
+        <Button text="EXPLORE WATCHES" w="w-[160px]" />
       </div>
     </div>
   );

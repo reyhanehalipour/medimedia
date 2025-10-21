@@ -12,7 +12,7 @@ export default function Button({ text, w, onClick }: ButtonProps) {
       onClick={onClick}
     >
       <div
-        className={`bg-backgroundButton  text-nowrap rounded-t-md w-[120px] ${w} h-[30px] flex items-center justify-center  text-[14px]`}
+        className={`bg-backgroundButton  text-nowrap rounded-t-md w-[120px] ${w} h-[30px] flex items-center justify-center  text-[12px]`}
       >
         {text}
       </div>
