@@ -9,18 +9,13 @@ interface TextWithUnderlineProps {
 
 const TextWithUnderline: React.FC<TextWithUnderlineProps> = ({
   text = "Sample Title",
-  underlineWidth = "100%",
 }) => {
   return (
     <div className="relative inline-block">
       <span className="font-serif text-2xl relative z-10">{text}</span>
-      <span
-        className="absolute left-0 rounded-sm z-0 bg-lightBrown h-[4px] bottom-2"
-        style={{ width: underlineWidth }}
-      ></span>
+      <span className="absolute left-0 rounded-sm z-0 bg-lightBrown h-[4px] w-full  bottom-2"></span>
     </div>
   );
 };
 
 export default TextWithUnderline;
-
