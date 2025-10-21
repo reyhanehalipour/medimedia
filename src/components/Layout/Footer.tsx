@@ -138,7 +138,9 @@ export default function Footer() {
         </div>
       </div>
       <div className="w-full h-[70px] bg-lightBrown  flex-col  justify-center md:flex md:flex-row items-center md:justify-around ">
-        <div>all right reseved @ 2022 design Thems</div>
+        <div className="flex items-center justify-center">
+          all right reseved @ 2022 design Thems
+        </div>
         <div className="flex items-center justify-center gap-4">
           <Image
             src="/images/flag.jpg"

@@ -13,7 +13,7 @@ import React from "react";
 import Image from "next/image";
 export default function Navbar() {
   return (
-    <div className=" w-full  flex items-center justify-between md:justify-around h-[50px]  font-[5px] bg-midBrown">
+    <div className=" w-full  flex items-center justify-between  h-[50px]  font-[5px] bg-midBrown px-5">
       <div className="flex  items-center  justify-center gap-[-10px]">
         <Image height={60} width={60} src={"/images/logo.png"} alt="watch" />
         <h1 className="text-xl font-serif text-primary  ">
@@ -21,7 +21,7 @@ export default function Navbar() {
           <p className="text-[14px] leading-[1.2rem] text-lightBrown">Luxury watch</p>
         </h1>
       </div>
-      <HamburgerMenu size="20" className=" flex md:hidden text-lightBrown" />
+      <HamburgerMenu size="20" className=" flex md:hidden text-lightBrown " />
       <nav className=" hidden  md:flex  items-center justify-center gap-5">
         <Link className="text-lightBrown" href={"/"}>
           Home

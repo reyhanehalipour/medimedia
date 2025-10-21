@@ -1,47 +1,64 @@
 "use client";
-import { useState, ReactNode } from "react";
+import React, { useState, ReactNode } from "react";
+import Button from "../share/Button";
+import { ArrowLeft, ArrowRight } from "iconsax-reactjs";
 
 interface SliderProps {
   slides: ReactNode[];
+  autoPlay?: boolean;
+  interval?: number;
 }
 
-const Slider: React.FC<SliderProps> = ({ slides }) => {
+const Carousel: React.FC<SliderProps> = ({
+  slides,
+  autoPlay = false,
+  interval = 3000,
+}) => {
   const [current, setCurrent] = useState<number>(0);
 
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
+  const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
+  const prevSlide = () =>
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+
+  React.useEffect(() => {
+    if (!autoPlay) return;
+    const timer = setInterval(nextSlide, interval);
+    return () => clearInterval(timer);
+  }, [current, autoPlay, interval]);
 
   return (
-    <div className="w-full  mx-auto relative overflow-hidden">
+    <div className="relative w-full overflow-hidden">
+      {/* اسلایدها */}
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
-        {slides.map((slide, index) => (
-          <div key={index} className="flex-shrink-0 w-full">
+        {slides.map((slide, i) => (
+          <div key={i} className="flex-shrink-0 w-full">
             {slide}
           </div>
         ))}
       </div>
 
-      <div className="flex justify-center mt-4 space-x-2">
-        {slides.map((_, index) => (
-          <span
-            key={index}
-            className={`w-2 h-2 rounded-full cursor-pointer ${
-              index === current ? "bg-lightBrown" : "bg-midBrown"
-            }`}
-            onClick={() => setCurrent(index)}
-          ></span>
-        ))}
+      {/* دکمه چپ */}
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10">
+        <Button
+          onClick={prevSlide}
+          text={<ArrowLeft size="30" className="text-white" />}
+          w="w-[60px]"
+        />
+      </div>
+
+      {/* دکمه راست */}
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10">
+        <Button
+          onClick={nextSlide}
+          text={<ArrowRight size="30" className="text-white" />}
+          w="w-[60px]"
+        />
       </div>
     </div>
   );
 };
 
-export default Slider;
+export default Carousel;

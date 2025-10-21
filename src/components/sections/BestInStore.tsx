@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import CategoryCard from "../share/CategoryCard";
 import TextWithUnderline from "../share/TextWithUnderline";
 import useMobile from "@/utils/useMobile";
+import Carousel from "../ui/Carousel";
 export default function BestInStore() {
   const [active, setActive] = useState("Classic");
   const isMobile = useMobile();
@@ -11,6 +12,16 @@ export default function BestInStore() {
     { id: "Modern", label: "Modern", href: "/Modern" },
     { id: "Digital", label: "Digital", href: "/Digital" },
   ];
+  const slideContent = (
+    <div className="flex items-center justify-center gap-4 w-full">
+      {" "}
+      <CategoryCard />
+      <CategoryCard />
+      <CategoryCard />
+      <CategoryCard />
+    </div>
+  );
+  const slides = [slideContent, slideContent];
   return (
     <div className="flex  flex-col items-center justify-center py-8">
       <TextWithUnderline text="best in store" />
@@ -42,10 +53,7 @@ export default function BestInStore() {
         ) : (
           <>
             {" "}
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
+            <Carousel slides={slides} />
           </>
         )}
       </div>
