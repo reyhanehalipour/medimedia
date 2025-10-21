@@ -6,7 +6,7 @@ import Carousel from "../ui/Carousel";
 export default function HeroSection() {
   const slideContent = (
     <div className="bg-[url('/images/backgroundImage.png')] p-10 h-[400px] bg-contain text-center md:text-left bg-no-repeat bg-center flex items-center justify-center md:items-center md:justify-start flex-col gap-10 w-full">
-      <div className="mt-10 md:mt-auto">
+      <div className="mt-10 md:mt-auto md:w-[80%] w-auto">
         <TextWithUnderline text="Fertuzy" />
         <p className="text-lightBrown text-[12px]">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit.
