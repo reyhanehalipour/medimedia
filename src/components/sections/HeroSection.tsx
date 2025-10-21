@@ -24,7 +24,7 @@ export default function HeroSection() {
           <span className="text-lightBrown text-2xl">$450.000</span>
         </div>
       </div>
-      <div className="mb-10 md:mb-auto">
+      <div className="mb-10 md:mb-auto md:self-start md:ml-[130px]">
         <Button text="EXPLORE WATCHES" w="w-[160px]" />
       </div>
     </div>

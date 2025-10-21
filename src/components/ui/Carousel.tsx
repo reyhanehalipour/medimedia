@@ -44,7 +44,7 @@ const Carousel: React.FC<SliderProps> = ({
       <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10">
         <Button
           onClick={prevSlide}
-          text={<ArrowLeft size="30" className="text-white" />}
+          text={<ArrowLeft size="20" className="text-white" />}
           w="w-[60px]"
         />
       </div>
@@ -53,7 +53,7 @@ const Carousel: React.FC<SliderProps> = ({
       <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10">
         <Button
           onClick={nextSlide}
-          text={<ArrowRight size="30" className="text-white" />}
+          text={<ArrowRight size="20" className="text-white" />}
           w="w-[60px]"
         />
       </div>
