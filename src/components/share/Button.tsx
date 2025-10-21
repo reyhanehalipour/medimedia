@@ -8,11 +8,11 @@ type ButtonProps = {
 export default function Button({ text, w, onClick }: ButtonProps) {
   return (
     <button
-      className="flex otems-center justify-center flex-col"
+      className="flex  otems-center justify-center flex-col"
       onClick={onClick}
     >
       <div
-        className={`bg-backgroundButton  text-nowrap rounded-t-md w-[120px] ${w} h-[30px] flex items-center justify-center  text-[12px]`}
+        className={`bg-backgroundButton  text-nowrap rounded-t-md w-[120px] ${w}  p-1 flex items-center justify-center  text-[12px]`}
       >
         {text}
       </div>

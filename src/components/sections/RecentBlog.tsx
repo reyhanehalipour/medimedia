@@ -3,6 +3,7 @@ import TextWithUnderline from "../share/TextWithUnderline";
 import Image from "next/image";
 import Button from "../share/Button";
 import { ArrowLeft, ArrowRight } from "iconsax-reactjs";
+import Carousel from "../ui/Carousel";
 
 export default function RecentBlog() {
   return (
@@ -36,11 +37,11 @@ export default function RecentBlog() {
       </div>
       <div className="flex items-center justify-between gap-2">
         <Button
-          text={<ArrowLeft size="30" className="text-white" />}
+          text={<ArrowLeft size="20" className="text-white" />}
           w={"w-[60px]"}
         />
         <Button
-          text={<ArrowRight size="30" className="text-white" />}
+          text={<ArrowRight size="20" className="text-white" />}
           w={"w-[60px]"}
         />
       </div>
